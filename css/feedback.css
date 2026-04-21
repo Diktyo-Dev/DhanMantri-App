@@ -1,0 +1,137 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    margin: 0;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255,255,255,0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow-y: auto; 
+}
+
+/* Top section */
+.top-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer inside sidebar */
+.sidebar-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 12px;
+}
+
+/* MAIN CONTENT SHIFT */
+.main-content {
+    margin-left: 220px;  
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+
+
+}
+
+/* CONTAINER */
+.container {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* SIDEBAR LINKS */
+.sidebar a {
+    display: block;
+    padding: 12px 14px;
+    margin: 6px 0;
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(5px);
+}
+
+.sidebar a.active {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+/* LOGO */
+.logo-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-box img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea, select {
+    margin-bottom: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    background: peachpuff;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+textarea {
+    height: 100px;
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+/* BUTTON */
+button {
+    padding: 12px;
+    background: #6f56df;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #000a0d;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Goals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="sidebar">
+    <div class="logo-box">
+        <img src="images/DhanMantri.png" alt="DhanMantri Logo">
+        <h2>DhanMantri</h2>
+    </div>
+    <a href="index.html" class="nav-link">Dashboard</a>
+    <a href="income.html" class="nav-link">Income</a>
+    <a href="expenses.html" class="nav-link">Expenses</a>
+    <a href="goals.html" class="nav-link active">Goals</a>
+    <a href="#" onclick="logout()">Logout</a>
+</div>
+
+<div class="topbar">
+    <h3>Financial Goals 🎯</h3>
+    <div>
+        <button onclick="toggleTheme()">🌙</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+</div>
+
+<div class="main">
+    <div id="messageBox" class="message-box"></div>
+    
+    <!-- NEW: Add Goal Section -->
+    <div class="form-box card">
+        <h3>Add New Goal</h3>
+        <input id="goal" placeholder="Goal Name (e.g. Buy Laptop)">
+        <input id="amount" type="number" placeholder="Target Amount (₹)">
+        <button onclick="addGoal()">➕ Add Goal</button>
+    </div>
+
+    <!-- NEW: Contribute Section -->
+    <div class="form-box card contribute-section">
+        <h3>Contribute to Goal</h3>
+        <select id="goalSelect">
+            <option value="">Select a Goal</option>
+        </select>
+        <input id="contributeAmount" type="number" placeholder="Amount to contribute (₹)">
+        <button onclick="contributeToGoal()">💰 Contribute</button>
+        <p class="note">* This will be deducted from your total income balance</p>
+    </div>
+
+    <h3>Your Goals</h3>
+    <ul id="goalList"></ul>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="js/firebase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback - DhanMantri</title>
+    <link rel="stylesheet" href="css/feedback.css">
+</head>
+<body>
+
+
+<div class="sidebar">
+
+    <div class="top-section">
+        <div class="logo-box">
+            <img src="images/DhanMantri.png" alt="Logo">
+            <h2>DhanMantri</h2>
+        </div>
+
+        <a href="index.html" class="nav-link">Dashboard</a>
+        <a href="income.html" class="nav-link">Income</a>
+        <a href="expenses.html" class="nav-link">Expenses</a>
+        <a href="goals.html" class="nav-link">Goals</a>
+        <a href="signup.html" class="nav-link">SignUp</a>
+        <a href="login.html" class="nav-link">Login</a>
+        <a href="#" onclick="logout()">Logout</a>
+        <a href="feedback.html" class="nav-link active">Feedback</a>
+    </div>
+
+
+    <div class="sidebar-footer">
+        <p>Developed by <strong>RAJU KUMAR</strong></p>
+        <p>Sources Used:</p>
+        <ul>
+            <li>Firebase Documentation</li>
+            <li>GitHub Repositories</li>
+            <li>Stack Overflow</li>
+            <li>MDN Web Docs</li>
+            <li>Google Search</li>
+        </ul>
+    </div>
+
+</div>
+
+
+<div class="main-content">
+
+    <header>
+        <h1>Feedback &  Requests</h1>
+    </header>
+
+    <div class="container">
+        <form id="feedbackForm">
+            
+            <label>Name *</label>
+            <input type="text" id="name" required>
+
+            <label>Email *</label>
+            <input type="email" id="email" required>
+
+            <label>Phone (Optional)</label>
+            <input type="tel" id="phone">
+
+            <label>Type of Feedback *</label>
+            <select id="type" required>
+                <option value="">Select</option>
+                <option>General Feedback</option>
+                <option>Feature Request</option>
+                <option>Bug Report</option>
+                <option>Improvement Suggestion</option>
+                <option>Business Inquiry</option>
+            </select>
+
+            <label>Message *</label>
+            <textarea id="message" required></textarea>
+
+            <button type="submit">Submit Feedback/Request</button>
+        </form>
+    </div>
+
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>   
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+<script src="js/firebase.js"></script>
+<script src="js/feedback.js"></script>
+</body>
+</html>

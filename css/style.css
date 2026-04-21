@@ -1,0 +1,562 @@
+/* Default reset for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Whole webpage common design */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2c3e50);
+    color: white;
+    min-height: 100vh;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: pageFade 0.5s ease;
+    line-height: 1.4;
+}
+
+/* Sidebars of all pages */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    padding: 24px 20px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Sidebar heading (DhanMAntri) design */
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #00c6ff;
+    text-shadow: 0 0 20px rgba(0, 198, 255, 0.5);
+}
+
+/* Sidebar links design */
+.sidebar a {
+    display: block;
+    padding: 14px 16px;
+    margin: 10px 0;
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    font-weight: 500;
+}
+
+/* Hover effect for sidebar links */
+.sidebar a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(6px);
+    box-shadow: 0 8px 25px rgba(0,198,255,0.2);
+}
+
+/* Active link (webpage) indicator design */
+.sidebar a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    transition: all 0.3s ease;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Hover effect for active link indicator */
+.sidebar a:hover::before {
+    height: 100%;
+    top: 0;
+}
+/* Active link (webpage) design */
+.sidebar a.active {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    box-shadow: 0 8px 25px rgba(0,198,255,0.3);
+    color: white;
+}
+
+/* Logo box design */
+.logo-box {
+    text-align: center;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo-box img {
+    width: 65px;
+    height: 65px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.logo-box img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Main content of the webpage area design */
+.main {
+    margin-left: 240px;
+    margin-top: 70px;
+    padding: 32px;
+    animation: fadeSlide 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Topbar of every webpage design index, expemse, income, goal, login, signup */
+.topbar {
+    position: fixed;
+    left: 240px;
+    right: 0;
+    top: 0;
+    height: 70px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 28px;
+    z-index: 1000;
+}
+
+/* Topbar heading design of all pages */
+.topbar h3 {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+/* Cards design for index, expense, income, goal pages */
+.cards {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+/* Individual card design */
+.card {
+    flex: 1;
+    min-width: 240px;
+    padding: 28px 24px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient line design on top of each card */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+/* Different gradient colors for income, expense, and balance cards in index page */
+.card.income::before { background: linear-gradient(90deg, #00ffae, #00b894); }
+.card.expense::before { background: linear-gradient(90deg, #ff4d4d, #e74c3c); }
+.card.balance::before { background: linear-gradient(90deg, #00c6ff, #0072ff); }
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border-color: rgba(0,198,255,0.3);
+}
+
+.card:hover::before { transform: scaleX(1); }
+
+h1, h2, h3 {
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+/* Form elements design for login, signup, expense, income, and goal pages */
+input, select {
+    padding: 14px 18px;
+    margin: 8px 0;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.12);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+input::placeholder { color: rgba(255,255,255,0.6); }
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #00c6ff;
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 0 0 4px rgba(0,198,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* Button design for all the webpages */
+button {
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,198,255,0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,198,255,0.4);
+}
+
+button:active {
+    transform: scale(0.97) translateY(-1px);
+}
+
+/* List design for expense, income, and goal pages */
+ul { margin-top: 24px; list-style: none; }
+
+li {
+    background: rgba(255,255,255,0.1);
+    padding: 16px 20px;
+    margin: 12px 0;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(15px);
+}
+
+li:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+li button {
+    margin-left: 12px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #ff4d4d, #e74c3c);
+    font-size: 13px;
+    min-width: 80px;
+}
+
+li button:hover {
+    box-shadow: 0 8px 25px rgba(255,77,77,0.4);
+}
+
+/* Authentication container design for login and signup pages */
+.auth-container {
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 110px);
+    transform: translate(-50%, -50%);
+    width: 360px;
+    padding: 40px 32px;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+/* Design for canvas element used in charts on index page */
+canvas {
+    background: transparent;
+    border-radius: 16px;
+}
+
+/* Design for progress bar used in goal page */
+progress {
+    width: 100%;
+    height: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Webkit specific design for progress bar for Chrome, Safari, and Edge searching apps */
+progress::-webkit-progress-bar {
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+progress::-webkit-progress-value {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    border-radius: 8px;
+}
+
+/* Design for toast notifications (alerts) used in all pages */
+.toast {
+    position: fixed;
+    top: 90px;
+    right: 28px;
+    min-width: 320px;
+    padding: 16px 24px;
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Different colors for success, error, and warning toast notifications */
+.toast.success { border-left: 5px solid #00ffae; background: rgba(0,255,174,0.2); }
+.toast.error { border-left: 5px solid #ff4d4d; background: rgba(255,77,77,0.2); }
+.toast.warning { border-left: 5px solid #ffc107; background: rgba(255,193,7,0.2); }
+
+/* Design for chart container on index page */
+.chart-container {
+    margin-top: 32px;
+    padding: 32px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    height: 380px;
+    position: relative;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+
+/* Design for export button on goal page */
+.export-btn {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    margin-top: 16px;
+}
+
+.export-btn:hover {
+    box-shadow: 0 12px 30px rgba(40,167,69,0.4);
+}
+
+/* Animations for smooth page load and element appearance */
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeScale {
+    from { opacity: 0; transform: translate(-50%, -40%) scale(0.95); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes pageFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Light mode styles */
+body.light {
+    background: linear-gradient(135deg, #f5f7fb, #e6ecf5, #dde6f3);
+    color: #2c3e50;
+}
+
+body.light .sidebar {
+    background: rgba(255,255,255,0.85);
+    border-right: 1px solid rgba(0,0,0,0.08);
+}
+
+body.light .sidebar a {
+    color: #475569;
+}
+
+body.light .sidebar a:hover {
+    background: rgba(0,198,255,0.12);
+}
+
+body.light .sidebar a.active {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+}
+
+body.light .card,
+body.light li {
+    background: rgba(255,255,255,0.92);
+    color: #2c3e50;
+    border-color: rgba(0,0,0,0.08);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+body.light input,
+body.light select {
+    background: rgba(255,255,255,0.95);
+    color: #2c3e50;
+    border-color: rgba(0,0,0,0.1);
+}
+
+body.light button {
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+}
+
+body.light .auth-container {
+    background: rgba(255,255,255,0.92);
+    color: #2c3e50;
+}
+
+body.light .chart-container {
+    background: rgba(255,255,255,0.92);
+    border-color: rgba(0,0,0,0.08);
+}
+
+body.light .toast {
+    background: rgba(255,255,255,0.95);
+    color: #2c3e50;
+}
+
+/* Responsive design for smaller screens */
+body.collapsed .sidebar {
+    width: 72px;
+}
+
+body.collapsed .main,
+body.collapsed .topbar {
+    margin-left: 92px;
+}
+
+body.collapsed .sidebar h2,
+body.collapsed .sidebar a span {
+    display: none;
+}
+
+body.collapsed .sidebar a {
+    padding: 16px;
+    justify-content: center;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .main,
+    .topbar {
+        margin-left: 0;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .auth-container {
+        left: 50%;
+        width: 90%;
+        max-width: 380px;
+    }
+}
+
+/* Design for empty state when there are no expenses, income, or goals */
+.empty-state {
+    text-align: center;
+    padding: 40px 24px;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+}
+
+/* Design for contribute section in goal page */
+.contribute-section {
+    margin-bottom: 32px;
+}
+
+.contribute-section select {
+    background: rgba(255,255,255,0.15);
+}
+
+.note {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 12px;
+    font-style: italic;
+}
+
+.goal-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px;
+}
+
+.goal-contribute {
+    background: linear-gradient(135deg, #10b981, #059669);
+    margin-top: 8px;
+    font-size: 13px;
+    padding: 8px 16px;
+}
+
+.goal-contribute:hover {
+    box-shadow: 0 6px 20px rgba(16,185,129,0.4);
+}
+
+/* Form box design for login, signup, expense, income, and goal pages */
+.form-box {
+    background: rgba(255,255,255,0.1);
+    padding: 28px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 32px;
+    backdrop-filter: blur(20px);
+}
+
+.form-box h3 {
+    margin-bottom: 20px;
+    color: #00c6ff;
+}
+
+/* Light mode specific styles for form box and contribute section */
+body.light .form-box,
+body.light .contribute-section {
+    background: rgba(255,255,255,0.9);
+    border-color: rgba(0,0,0,0.08);
+}
+
+body.light .note {
+    color: #64748b;
+}

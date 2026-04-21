@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <div class="logo-box">
+        <img src="images/DhanMantri.png" alt="DhanMantri Logo">
+        <h2>DhanMantri</h2>
+    </div>
+    <a href="index.html" class="nav-link">Dashboard</a>
+<a href="income.html" class="nav-link">Income</a>
+<a href="expenses.html" class="nav-link">Expenses</a>
+<a href="goals.html" class="nav-link">Goals</a>
+<a href="signup.html" class="nav-link">SignUp</a>
+<a href="login.html" class="nav-link active">Login</a>
+
+</div>
+<div class="topbar">
+    <div class="left">
+        <h3>LOGIN</h3>
+    </div>
+
+    <div class="right">
+        <button onclick="toggleTheme()">🌙</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+</div>
+
+<div class="auth-container">
+    <h2>Login</h2>
+
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <p>Don't have account? <a href="signup.html">Signup</a></p>
+    
+</div>
+<div id="toast" class="toast"></div>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<script src="js/firebase.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
